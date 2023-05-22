@@ -1,1 +1,70 @@
-<p>header works!</p>
+<nav class="header">
+  <div class="container">
+    <nav class="nav">
+      <!-- Start Logo -->
+      <a href="#">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/New_Balance_logo.svg/2560px-New_Balance_logo.svg.png"
+          alt="Logo"
+          width="80"
+          height="40"
+        />
+      </a>
+      <!-- End Logo -->
+      <!-- Start navbar -->
+
+      <ul class="nav-link">
+        <!-- New -->
+        <li class="nav-item-link">
+          <a href="#">New</a>
+        </li>
+        <!-- Men -->
+        <li class="nav-item-link">
+          <a href="#">Men</a>
+        </li>
+        <!-- Women -->
+        <li class="nav-item-link">
+          <a href="#">Women</a>
+        </li>
+        <!-- Kids -->
+        <li class="nav-item-link">
+          <a href="#">Kids</a>
+        </li>
+        <!-- Running -->
+        <li class="nav-item-link">
+          <a href="#">Running</a>
+        </li>
+        <!-- Grey Shop -->
+        <li class="nav-item-link">
+          <a href="#">Grey Shop</a>
+        </li>
+      </ul>
+
+      <div class="nav-service">
+        <form role="search" class="nav-search mx-3">
+          <input type="search" placeholder="Search" aria-label="Search" class="nav-search-input" />
+          <span class="icon-seach">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+        </form>
+        <div class="nav-auth mx-3 d-flex">
+          <div class="auth-hover sign-in">
+            <span class="icon-user">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <a routerLink="/auth/sign-in">Log in</a>
+          </div>
+          <div class="auth-hover sign-up mx-3">
+            <a routerLink="/auth/sign-up">Join</a>
+          </div>
+        </div>
+        <div class="nav-cart mx-3">
+          <span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </span>
+        </div>
+      </div>
+      <!-- End navbar -->
+    </nav>
+  </div>
+</nav>

@@ -1,0 +1,82 @@
+.header {
+  min-height: 81px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  margin-left: 30px;
+}
+.nav-item-link {
+  margin: 0 20px;
+  list-style: none;
+  display: block;
+}
+.nav-item-link a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+.nav-item-link:hover a{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cf092d;
+}
+.nav-service {
+  display: flex;
+  align-items: center;
+}
+.nav-search{
+    position: relative;
+}
+
+.icon-seach{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.nav-search-input{
+    height: 35px;
+    outline: none;
+    padding: 6px;
+    border: 1px solid #d7d7d7;
+    background-color: #ededed;
+
+}
+.nav-auth{
+    position: relative;
+}
+.nav-auth a{
+    text-decoration: none;
+    color: #000;
+}
+.icon-user{
+    padding-right: 10px;
+}
+.sign-in::after{
+    content: "";
+    display: inline-block;
+    width: 0.5px;
+    height: 16px;
+    background-color: #151415;
+    position: absolute;
+    top: 4px;
+    right: 40%;
+}
+.auth-hover:hover a{
+text-decoration: underline;
+}
