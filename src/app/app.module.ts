@@ -6,16 +6,14 @@ import { PageNotFoundComponent } from './layouts/pages/page-not-found/page-not-f
 import { AuthModule } from './auth/auth.module';
 import { HeaderComponent } from './layouts/components/header/header.component';
 import { FooterComponent } from './layouts/components/footer/footer.component';
+import { LayoutsComponent } from './layouts/layouts.component';
+import { LayoutsModule } from './layouts/layouts.module';
 
 @NgModule({
-  imports: [BrowserModule, AppRoutingModule, AuthModule],
-
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  // Module để trong imports
+  imports: [BrowserModule, AppRoutingModule, AuthModule, LayoutsModule],
+  // Components để trong declarations
+  declarations: [AppComponent, PageNotFoundComponent],
 
   providers: [],
 
