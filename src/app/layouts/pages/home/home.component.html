@@ -1,1 +1,147 @@
-<p>home works!</p>
+<section class="home-page">
+  <!-- START BANNER IMG-->
+  <div class="row gx-0">
+    <div class="col-12">
+      <div class="container-fluid">
+        <div class="banner-img row">
+          <div class="col-12 fluid-img-max-width w-100 position-relative">
+            <img
+              src="https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw84a13a44/images/page-designer/2023/may/12345_Comp_A1_Desktop.jpg"
+              alt=""
+              class="w-100"
+            />
+          </div>
+        </div>
+        <div class="banner-text">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="banner-text-content">
+                  <h2 class="banner-text-title">The Grey Shop</h2>
+                  <p class="banner-text-para">
+                    New and classic expressions of our timeless signature color.
+                  </p>
+                  <button class="btn btn-danger btn-medium">Shop now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END BANNER IMG-->
+
+  <!-- START INFO -->
+  <div class="info">
+    <div class="info-img fluid-img-max-width">
+      <div class="row gx-0">
+        <div class="col-6">
+          <img
+            src="https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw79ab6e7f/images/page-designer/2023/may/15451_Comp_E_Image1.jpg?sw=1616&sfrm=jpg"
+            alt=""
+            class="w-100"
+          />
+        </div>
+        <div class="col-6">
+          <img
+            src="https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw4e54d462/images/page-designer/2023/may/14969_Comp_E2_Image1.jpg?sw=1616&sfrm=jpg"
+            alt=""
+            class="w-100"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="info-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 mt-5">
+            <h2 class="info-title fs-4">The Fresh Foam X 1080v12</h2>
+            <p class="info-para">
+              Our best running shoe— in new, online exclusive colorways
+            </p>
+            <button class="btn btn-danger btn-medium">Shop now</button>
+          </div>
+          <div class="col-6 mt-5">
+            <h2 class="info-title fs-4">A classic in any era</h2>
+            <p class="info-para">
+              The 550 in triple white, worn by Jack Harlow
+            </p>
+            <button class="btn btn-danger btn-medium">Shop now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END INFO -->
+
+  <!-- START BANNER VIDEO -->
+  <div class="banner-video">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div class="h-100 d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="offset-2 col-8">
+                <h1 class="mb-6">Be Klutch.</h1>
+                <div class="mb-4">
+                  <p class="mb-0">
+                    Introducing Klutch Athletics by New Balance. A new
+                    athlete-first sportswear brand co-authored with Rich Paul
+                    that celebrates the intersection of sport, culture, and
+                    community.
+                  </p>
+                </div>
+              </div>
+              <div class="offset-2 col-10">
+                <div>
+                  <button
+                    href="#"
+                    class="btn btn-danger btn-medium me-5"
+                    role="button"
+                  >
+                    Shop now
+                  </button>
+                  <button href="#" class="btn-medium-outline" role="button">
+                    Explore
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+        <div class="col-6">
+          <video class="w-100" autoplay>
+            <source
+              src="https://nb.scene7.com/is/content/NB/14898_Klutch_Lookbook_1x1_30s_sfra"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- START BANNER VIDEO -->
+
+  <!-- START RECOMMEND -->
+  <div class="recommend">
+    <div class="container">
+      <h2 class="recommend-title fs-4">Recommended for you</h2>
+      <div class="row">
+        <div class="col-12">
+          <ngx-slick-carousel
+            class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfig"
+          >
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+              <img src="{{ slide.img }}" width="100%" />
+            </div>
+          </ngx-slick-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END RECOMMEND -->
+</section>
