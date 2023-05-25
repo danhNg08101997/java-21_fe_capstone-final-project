@@ -1,0 +1,65 @@
+.email-signup {
+  height: 96px;
+}
+/* START FOOTER COLUMN */
+.footer-column {
+  margin-top: 48px;
+  margin-bottom: 40px;
+}
+.footer-column .column-content {
+  margin-top: 24px;
+}
+.column-item .item-title {
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-bottom: 14px;
+  margin: 0;
+}
+.column-item .item-list {
+  padding: 0;
+}
+.column-item .item-list li {
+  list-style: none;
+  line-height: 2.4rem;
+  font-size: 14px;
+}
+.column-item .item-list li a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #000;
+}
+.column-item .item-list li a:hover {
+  text-decoration: underline;
+}
+.column-last .about-company {
+  font-weight: 300;
+}
+/* END FOOTER COLUMN */
+
+/* START FOOTER BOX */
+.footer-box {
+  background-color: #fafafa;
+  padding-bottom: 1rem;
+}
+.family-brands{
+    padding: 24px 0;
+}
+.family-brands span {
+  margin-right: 1.5rem;
+}
+.family-brands .title {
+}
+.family-brands .img img {
+  height: 2rem;
+}
+.footer-add-link{
+    font-size: 14px;
+}
+.flag-text{
+    font-weight: 700;
+}
+.links .link-item a{
+    color: #000;
+}
+/* END FOOTER BOX */

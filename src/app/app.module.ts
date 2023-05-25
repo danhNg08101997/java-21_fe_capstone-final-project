@@ -6,6 +6,8 @@ import { PageNotFoundComponent } from './layouts/pages/page-not-found/page-not-f
 import { AuthModule } from './auth/auth.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   // Module để trong imports
@@ -15,6 +17,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     AuthModule,
     LayoutsModule,
     SlickCarouselModule,
+    BrowserAnimationsModule,
   ],
   // Components để trong declarations
   declarations: [AppComponent, PageNotFoundComponent],
