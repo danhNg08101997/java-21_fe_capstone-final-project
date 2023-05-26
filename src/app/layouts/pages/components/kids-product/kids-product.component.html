@@ -1,0 +1,32 @@
+<div class="kids-product product-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ngx-slick-carousel
+            class="carousel pb-3"
+            #slickModal="slick-carousel"
+            [config]="slideConfig"
+          >
+            <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+              <div class="product-img">
+                <img src="{{ slide.img }}" width="100%" />
+              </div>
+              <div class="product-info d-flex justify-content-between pt-2">
+                <div class="info-left">
+                  <b class="product-name">{{slide.name}}</b>
+                  <p class="product-sex">{{slide.sex}}</p>
+                </div>
+                <div class="info-right">
+                  <b class="product-price">{{slide.price}}</b>
+                </div>
+              </div>
+            </div>
+          </ngx-slick-carousel>
+          <div class="col-12 text-center mt-5">
+            <button class="btn-large-outline">Shop kids</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
