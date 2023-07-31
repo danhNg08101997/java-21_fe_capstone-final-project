@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
 
+/* reset css */
 * {
   margin: 0;
   padding: 0;
@@ -8,117 +8,13 @@
 }
 
 body {
+  background: url("https://bookingonline.vpbank.com.vn/static/media/bg_page1.fd8b2394.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+   display: flex;
+  justify-content: flex-end;
+  align-items: center;
   font-family: "Be Vietnam Pro", sans-serif;
 }
-.product-text{
-  font-size: 14px !important;
-  font-weight: 400 !important;
-}
-
-/* START CUSTOM BTN */
-.btn-large-outline{
-  width: 459px;
-  height: 52px;
-  border-radius: 0;
-  font-size: 13px;
-  background-color: transparent;
-  border: 2px solid #cf0a2c;
-  color: #cf0a2c;
-  font-weight: 600;
-  transition: all linear 0.1s;
-}
-
-.btn-medium {
-  width: 168px;
-  height: 55px;
-  border-radius: 0;
-  font-size: 13px;
-  font-weight: 600;
-}
-.btn-medium-outline {
-  width: 168px;
-  height: 55px;
-  border-radius: 0;
-  font-size: 13px;
-  background-color: transparent;
-  border: 2px solid #cf0a2c;
-  color: #cf0a2c;
-  font-weight: 600;
-  transition: all linear 0.1s;
-}
-.btn-medium-outline:hover, 
-.btn-large-outline:hover {
-  border: 4px solid #cf0a2c;
-}
-/* END CUSTOM BTN */
-
-/* START CONFIG SLICK CAROUSEL */
-body .arrow-prev {
-  width: 36px;
-  height: 36px;
-  background-color: #fff;
-  font-weight: 500;
-  border-radius: 18px;
-  position: absolute;
-  left: 20px;
-  z-index: 20;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-}
-body .arrow-prev::before {
-  content: "";
-  background-image: url("./assets/images/left-arrow-backup-2-svgrepo-com.svg");
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  transform: translateY(-50%) translateX(-50%);
-  background-size: contain;
-}
-body .arrow-next {
-  width: 36px;
-  height: 36px;
-  background-color: #fff;
-  font-weight: 500;
-  border-radius: 18px;
-  position: absolute;
-  right: 20px;
-  z-index: 20;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-}
-body .arrow-next::before {
-  content: "";
-  background-image: url("./assets/images/right-arrow-backup-2-svgrepo-com.svg");
-  height: 16px;
-  width: 16px;
-  position: absolute;
-  transform: translateY(-50%) translateX(-50%);
-  background-size: contain;
-}
-.carousel .slide {
-  padding-right: 35px;
-}
-/* END CONFIG SLICK CAROUSEL */
-
-/* START TAB */
-body .mat-tab-group {
-  margin-bottom: 103px;
-}
-body .mdc-tab__content{
-  width: 150px;
-}
-body .mdc-tab--active {
-  border-bottom: 6px solid red;
-}
-body .mdc-tab--active .mdc-tab__text-label {
-  color: #cf0a2c;
-  font-weight: 700;
-}
-body .mdc-tab-indicator {
-  width: 100%;
-  padding: 0 352px;
-  opacity: 0.3;
-}
-/* END TAB */

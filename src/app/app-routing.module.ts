@@ -4,12 +4,12 @@ import { PageNotFoundComponent } from './layouts/pages/page-not-found/page-not-f
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'bookingapp',
     loadChildren: () =>
       import('./layouts/layouts.module').then((m) => m.LayoutsModule),
   },
   {
-    path: 'auth',
+    path: '',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   { path: '**', component: PageNotFoundComponent },

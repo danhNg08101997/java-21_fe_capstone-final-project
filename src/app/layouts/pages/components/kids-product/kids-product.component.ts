@@ -51,6 +51,7 @@ export class KidsProductComponent implements OnInit {
     nextArrow: "<button class='arrow-next'></button>",
     centerMode: true,
     infinite: true,
+    standalone:true
   };
   constructor() {}
 

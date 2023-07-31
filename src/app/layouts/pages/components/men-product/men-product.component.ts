@@ -50,8 +50,7 @@ export class MenProductComponent {
     prevArrow: "<button class='arrow-prev'></button>",
     nextArrow: "<button class='arrow-next'></button>",
     centerMode: true,
-    focusOnSelect: true,
+    standalone:true,
     infinite: true,
   };
-
 }

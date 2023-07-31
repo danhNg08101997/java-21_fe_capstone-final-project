@@ -1,0 +1,14 @@
+.form-login {
+    border-radius: 10px;
+    background: hsla(0,0%,100%,.1)!important;
+    backdrop-filter: blur(3px);
+    margin-left: 100%;
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 50px;
+  }
+  input{
+    background-color: transparent;
+  }
+  

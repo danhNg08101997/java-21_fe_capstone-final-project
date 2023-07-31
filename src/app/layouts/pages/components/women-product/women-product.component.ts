@@ -23,7 +23,7 @@ export class WomenProductComponent implements OnInit {
       name: 'Klutch x NB Pre Game Chill T-Shirt',
       img: 'https://nb.scene7.com/is/image/NB/wb31590gym_nb_40_i?$pdpflexf2$&wid=928&hei=928',
       price: '$39.99',
-      sex: "Men's",
+      sex: "Women's",
     },
     {
       name: 'Klutch x NB Unleash Training Short',
@@ -51,6 +51,7 @@ export class WomenProductComponent implements OnInit {
     nextArrow: "<button class='arrow-next'></button>",
     centerMode: true,
     infinite: true,
+    standalone:true
   };
 
   constructor() {}
