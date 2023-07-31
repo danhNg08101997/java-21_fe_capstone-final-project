@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { User } from 'src/app/core/models/auth.model';
 import { LoginService } from 'src/app/core/services/login.service';
 
@@ -17,18 +17,17 @@ export class SigninComponent implements OnInit {
     private loginService: LoginService,
     private formBuilder: FormBuilder
   ) {
-    this.loginForm = formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       username: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }
-get f(){
-  return this.loginForm.controls
-}
-  ngOnInit(): void {
+  get f() {
+    return this.loginForm.controls;
   }
+  ngOnInit(): void {}
 
-  submit() {
+  onSubmit() {
     this.isSubmit = true;
     const json = this.loginForm.value;
     this.loginService.sigin(json).subscribe((res) => {
