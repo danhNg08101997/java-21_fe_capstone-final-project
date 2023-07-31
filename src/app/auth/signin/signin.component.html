@@ -1,31 +1,47 @@
 <div class="row">
-    <form #f="ngForm" (ngSubmit)="login(f)" class="form-login p-4">
-      <h1 class="col-12 text-center text-primary">Login Page</h1>
-      <div class="row">
-        <div class="mb-3 col-md-10 ms-5">
-          <label for="userId" class="form-label text-primary">Username</label>
-          <input
-            type="text"
-            [(ngModel)]="user.username"
-            class="form-control"
-            id="username"
-            name="username"
-          />
-        </div>
-        <div class="mb-3 col-md-10 ms-5">
-          <label for="password" ngModel="password" class="form-label text-primary"
-            >Password</label
-          >
-          <input
-            type="password"
-            [(ngModel)]="user.password"
-            class="form-control"
-            id="password"
-            name="password"
-          />
+  <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form-login p-4">
+    <h1 class="col-12 text-center text-primary">Login Page</h1>
+    <div class="row">
+      <div class="mb-3 col-md-10 ms-5">
+        <label for="username" class="form-label text-primary">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+          [ngClass]="{
+            'is-invalid': isSubmit && f.username.errors,
+            'is-valid': !f.username.errors
+          }"
+        />
+        <div class="text-danger mt-2" *ngIf="isSubmit && f.username.errors">
+          <span *ngIf="f.username.errors?.required"
+            >{{ "Vui lòng nhập username" }}
+          </span>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary ms-5">Login</button>
-    </form>
-  </div>
-  
+
+      <div class="mb-3 col-md-10 ms-5">
+        <label for="password" ngModel="password" class="form-label text-primary"
+          >Password</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid': isSubmit && f.password.errors,
+            'is-valid': !f.password.errors
+          }"
+        />
+        <div class="text-danger mt-2" *ngIf="isSubmit && f.password.errors">
+          <span *ngIf="f.password.errors?.required"
+            >{{ "Vui lòng nhập password" }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary ms-5">Login</button>
+  </form>
+</div>
