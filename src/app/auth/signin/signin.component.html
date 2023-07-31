@@ -1,7 +1,8 @@
 <div class="row">
-  <form [formGroup]="loginForm" (ngSubmit)="submit()" class="form-login p-4">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-login p-4">
     <h1 class="col-12 text-center text-primary">Login Page</h1>
     <div class="row">
+      <!-- Username -->
       <div class="mb-3 col-md-10 ms-5">
         <label for="username" class="form-label text-primary">Username</label>
         <input
@@ -15,16 +16,19 @@
           }"
         />
         <div class="text-danger mt-2" *ngIf="isSubmit && f.username.errors">
-          <span *ngIf="f.username.errors?.required"
-            >{{ "Vui lòng nhập username" }}
+          <span *ngIf="f.username.errors?.required">
+            {{ "Vui lòng nhập username" }}
           </span>
         </div>
       </div>
-
+      <!-- Password -->
       <div class="mb-3 col-md-10 ms-5">
-        <label for="password" ngModel="password" class="form-label text-primary"
-          >Password</label
-        >
+        <label
+          for="password"
+          ngModel="password"
+          class="form-label text-primary">
+          Password
+        </label>
         <input
           type="password"
           class="form-control"

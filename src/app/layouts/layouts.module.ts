@@ -12,6 +12,7 @@ import { TabProductComponent } from './pages/components/tab-product/tab-product.
 import { MenProductComponent } from './pages/components/men-product/men-product.component';
 import { WomenProductComponent } from './pages/components/women-product/women-product.component';
 import { KidsProductComponent } from './pages/components/kids-product/kids-product.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { KidsProductComponent } from './pages/components/kids-product/kids-produ
     MenProductComponent,
     WomenProductComponent,
     KidsProductComponent,
+    SidebarComponent,
 
   ],
 })
