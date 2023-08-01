@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  private loginUrl = "http://localhost:8080/signin"
+  private loginUrl = "http://localhost:8080/api/signin"
 
   constructor(private httpClient: HttpClient) { }
 
   sigin(user:User):Observable<any>{
-    return this.httpClient.post(`${this.loginUrl}`, user);
+    return this.httpClient.post<any>(`${this.loginUrl}`, user);
   }
 }

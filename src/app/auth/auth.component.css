@@ -1,0 +1,13 @@
+.bg-auth {
+  background: url("https://bookingonline.vpbank.com.vn/static/media/bg_page1.fd8b2394.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

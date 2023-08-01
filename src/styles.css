@@ -8,13 +8,5 @@
 }
 
 body {
-  background: url("https://bookingonline.vpbank.com.vn/static/media/bg_page1.fd8b2394.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  position: fixed;
-   display: flex;
-  justify-content: flex-end;
-  align-items: center;
   font-family: "Be Vietnam Pro", sans-serif;
 }
