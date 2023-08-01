@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { error } from 'jquery';
 import { User } from 'src/app/core/models/auth.model';
 import { LoginService } from 'src/app/core/services/login.service';
 
@@ -15,13 +17,15 @@ export class SigninComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.loginForm = this.formBuilder.group({
       username: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }
+
   get f() {
     return this.loginForm.controls;
   }
@@ -30,14 +34,17 @@ export class SigninComponent implements OnInit {
   onSubmit() {
     this.isSubmit = true;
     const json = this.loginForm.value;
-    this.loginService.sigin(json).subscribe((res) => {
-      if (res) {
-        console.log(res);
-        alert('Login Successfully');
+    this.loginService.sigin(json).subscribe(
+      (res) => {
+        if (res) {
+          alert('Login Successfully');
+          this.router.navigate(['bookingapp/dashboard']);
+        }
+      },
+      (error) => {
+        alert('Login Fail');
         this.loginForm.reset();
-      } else {
-        alert('Error');
       }
-    });
+    );
   }
 }
