@@ -3,15 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoryService {
-  private API_GET_CATEGORIES = "http://localhost:8080/api/category"
+  private API_CATEGORIES = 'http://localhost:8080/api/category';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  getCategories(payload:any){
-    return this.httpClient.post<any>(`${this.API_GET_CATEGORIES}`,payload)
+  getCategories(payload: any) {
+    return this.httpClient.post<any>(`${this.API_CATEGORIES}`, payload);
   }
-
 }

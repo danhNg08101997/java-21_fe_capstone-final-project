@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from 'src/app/core/services/category.service';
+import { ProductService } from 'src/app/core/services/product.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,19 +10,28 @@ import { CategoryService } from 'src/app/core/services/category.service';
 export class SidebarComponent implements OnInit {
   fullScreen = false;
   notificationItems: Array<{}> = [];
-  listCategory: Array<{}> = [];
+  listCategory: any;
+  listProduct: any;
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private productService: ProductService
+  ) {}
   ngOnInit(): void {
     this.getAllCategories();
+    this.getAllProducts();
   }
 
-  getAllCategories(){
-    this.categoryService.getCategories({}).subscribe((res)=>{
-      console.log(res)
-    })
+  getAllCategories() {
+    this.categoryService.getCategories({}).subscribe((res) => {
+      this.listCategory = res.data;
+      console.log(this.listCategory[0].id);
+    });
   }
-
-  showQrScan() {}
-  openScreen() {}
+  getAllProducts() {
+    this.productService.getProducts({}).subscribe((res) => {
+      this.listProduct = res.data;
+      console.log(res);
+    });
+  }
 }
