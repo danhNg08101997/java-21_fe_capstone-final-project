@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/core/services/category.service';
+import { ProductService } from 'src/app/core/services/product.service';
 
 declare interface RouteInfo {
   path: string;
@@ -45,22 +46,33 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   public menuItems: any[];
+  public menuProducts: any[];
   public isCollapsed = true;
 
-  constructor(private router: Router, private service: CategoryService) {}
+  constructor(
+    private router: Router,
+    private categoryService: CategoryService,
+    private productService: ProductService
+  ) {}
 
   ngOnInit() {
     // this.menuItems = ROUTES.filter(menuItem => menuItem);
     this.getCategories();
+    this.getProducts();
     this.router.events.subscribe((event) => {
       this.isCollapsed = true;
     });
   }
 
   getCategories() {
-    this.service.getAll({}).subscribe((res) => {
-      console.log(res);
+    this.categoryService.getAll({}).subscribe((res) => {
       this.menuItems = res.data;
+    });
+  }
+  getProducts() {
+    this.productService.getAll({}).subscribe((res) => {
+      console.log(res);
+      this.menuProducts = res.data;
     });
   }
 }
