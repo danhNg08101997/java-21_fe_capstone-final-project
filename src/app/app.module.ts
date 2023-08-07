@@ -1,27 +1,35 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './layouts/pages/page-not-found/page-not-found.component';
-import { AuthModule } from './auth/auth.module';
-import { LayoutsModule } from './layouts/layouts.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { AppComponent } from './app.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
-  // Module để trong imports
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule,
-    LayoutsModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
+    ComponentsModule,
+    NgbModule,
+    RouterModule,
+    AppRoutingModule
   ],
-  // Components để trong declarations
-  declarations: [AppComponent, PageNotFoundComponent],
-
+  declarations: [
+    AppComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent
+  ],
   providers: [],
-
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
