@@ -45,7 +45,7 @@ export const ROUTES: RouteInfo[] = [
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  public menuItems: any[];
+  public menuCategories: any[];
   public menuProducts: any[];
   public isCollapsed = true;
 
@@ -66,12 +66,11 @@ export class SidebarComponent implements OnInit {
 
   getCategories() {
     this.categoryService.getAll({}).subscribe((res) => {
-      this.menuItems = res.data;
+      this.menuCategories = res.data;
     });
   }
   getProducts() {
     this.productService.getAll({}).subscribe((res) => {
-      console.log(res);
       this.menuProducts = res.data;
     });
   }

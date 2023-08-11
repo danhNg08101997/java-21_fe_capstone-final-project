@@ -1,0 +1,99 @@
+<!-- ====TIÊU ĐỀ==== -->
+<div class="modal-header align-middle text-uppercase">
+  <h4 id="modal-title">
+    {{
+      type === "create"
+        ? "Tạo mới giao dịch viên"
+        : type === "edit"
+        ? "Chỉnh sửa giao dịch viên"
+        : "Thông tin giao dịch viên"
+    }}
+  </h4>
+  <button
+    (click)="activeModal.dismiss()"
+    aria-deascribedby="modal-title"
+    class="close"
+    type="button"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<!-- ====TIÊU ĐỀ==== -->
+<!-- ====FORM NHẬP==== -->
+<div class="modal-body">
+  <form [formGroup]="formGdvModal" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 form-group">
+        <label class="pt-1">
+          Username (<span class="text-danger">*</span>)
+        </label>
+        <input
+          class="form-control"
+          formControlName="username"
+          placeholder="Nhập username"
+          type="text"
+        />
+      </div>
+      <div class="col-sm-12 col-md-6 form-group">
+        <label class="pt-1">
+          Password (<span class="text-danger">*</span>)
+        </label>
+        <input
+          class="form-control"
+          formControlName="password"
+          placeholder="Nhập password"
+          type="password"
+        />
+      </div>
+      <div class="col-sm-12 col-md-6 form-group">
+        <label class="pt-1">
+          Fullname (<span class="text-danger">*</span>)
+        </label>
+        <input
+          class="form-control"
+          formControlName="fullname"
+          placeholder="Nhập fullname"
+          type="text"
+        />
+      </div>
+      <!-- Status -->
+      <div class="col-sm-12 col-md-6 form-group">
+        <label class="pt-1">
+          Trạng thái
+          (<span class="text-danger">*</span>)
+        </label>
+        <ng-select
+          placeholder="Chọn trạng thái"
+          formControlName="status"
+          [items]="listStatus"
+          [clearable]="true"
+          bindLabel="name"
+          bindValue="value"
+          [multiple]="false"
+        >
+        </ng-select>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- ====FORM NHẬP==== -->
+<!-- ====FOOTER MODAL==== -->
+<div class="modal-footer">
+  <button
+    [disabled]="type == 'view'"
+    (click)="cancel()"
+    class="btn btn-secondary"
+    type="button"
+  >
+    <i class="fas fa-times-circle mr-1"></i>Cancel
+  </button>
+  <button
+    [disabled]="type == 'view'"
+    (click)="onSubmit()"
+    class="btn btn-primary"
+    type="button"
+  >
+    <i class="fas fa-check mr-1"></i>Save
+  </button>
+</div>
+<!-- ====FOOTER MODAL==== -->

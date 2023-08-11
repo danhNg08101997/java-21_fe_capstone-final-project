@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.cursor {
+  cursor: pointer;
+}
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@ng-select/ng-select/themes/material.theme.css";
+@import "sweetalert2/src/sweetalert2.scss";
+
+
+// regular style toast
+@import 'ngx-toastr/toastr';
+
+// if you'd like to use it without importing all of bootstrap it requires
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+// bootstrap 4
+@import 'ngx-toastr/toastr-bs4-alert';
