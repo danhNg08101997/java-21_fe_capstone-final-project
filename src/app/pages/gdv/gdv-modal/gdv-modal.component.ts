@@ -27,6 +27,7 @@ export class GdvModalComponent implements OnInit {
     private toastrService: ToastrService
   ) {
     this.formGdvModal = this.fb.group({
+      gdvId: [null],
       username: [null],
       password: [null],
       fullname: [null],
@@ -66,13 +67,15 @@ export class GdvModalComponent implements OnInit {
 
   update() {
     const json = this.formGdvModal.value;
-    this.gdvService.update(json).subscribe((res) => {
-      if (res && res.statusCode === 200) {
-        this.toastrService.success(res.message);
-        this.passEntry.emit(res);
-      } else {
-        this.toastrService.error(res.message);
-      }
-    });
+    if (json.gdvId != null) {
+      this.gdvService.update(json).subscribe((res) => {
+        if (res && res.statusCode === 200) {
+          this.toastrService.success(res.message);
+          this.passEntry.emit(res);
+        } else {
+          this.toastrService.error(res.message);
+        }
+      });
+    }
   }
 }
