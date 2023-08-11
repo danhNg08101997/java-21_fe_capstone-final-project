@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <!-- ====TITLE==== -->
+  <h2 class="mt-3 text-uppercase text-primary">Danh mục giao dịch viên</h2>
+  <!-- ====TITLE==== -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card bg-default shadow">
+        <div class="card-body">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="text-uppercase text-white mb-0">Tìm kiếm thông tin</h3>
+          </div>
+          <form [formGroup]="formGdv" (ngSubmit)="search()">
+            <div class="row">
+              <label
+                for="username"
+                class="col-sm-4 col-md-6 col-lg-5 col-xl-2 text-white text-right"
+                >Username:</label
+              >
+              <div class="col-sm-7 col-md-6 col-lg-7 col-xl-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="username"
+                  placeholder="Nhập username"
+                />
+              </div>
+            </div>
+            <div class="row pt-3">
+              <div class="col-4 text-left">
+                <button
+                  type="button"
+                  class="btn btn-primary mr-1 mb-1"
+                  (click)="openModal('create', null)"
+                >
+                  <i class="fas fa-plus mr-1"></i> Add new
+                </button>
+              </div>
+              <div class="col-8 text-right">
+                <button
+                  type="button"
+                  class="btn btn-secondary mr-1 mb-1"
+                  (click)="refresh()"
+                >
+                  <i class="fas fa-undo-alt mr-1"></i> Refresh
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary mr-1 mb-1"
+                  (click)="search()"
+                >
+                  <i class="fas fa-search mr-1"></i>Search
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="text-white mb-0 text-uppercase">
+            Danh sách giao dịch viên
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-dark table-flush">
+            <thead class="thead-dark">
+              <tr>
+                <th class="text-center align-middle">STT</th>
+                <th class="text-center align-middle">Username</th>
+                <th class="text-center align-middle">Fullname</th>
+                <th class="text-center align-middle">Status</th>
+                <th class="text-center align-middle">Role</th>
+                <th class="text-center align-middle">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let gdv of listGDVs; let i = index">
+                <th class="text-center align-middle">
+                  <span>{{ i + 1 }}</span>
+                </th>
+                <td class="text-center align-middle">
+                  {{gdv.username}}
+                </td>
+                <td class="text-center align-middle">
+                  {{ gdv.fullname }}
+                </td>
+                <td class="text-center align-middle">
+                  {{ gdv.available }}
+                </td>
+                <td class="text-center align-middle">
+                  {{ gdv.role }}
+                </td>
+                <td class="text-center align-middle">
+                  <!-- Edit -->
+                  <span class="text-info p-1" (click)="openModal('edit', gdv)">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <!-- Delete -->
+                  <span class="text-danger p-1" (click)="delete(gdv)">
+                    <i class="fas fa-trash-alt fa-lg" title="Xoá"></i>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4">
+          <nav aria-label="...">
+            <ul class="pagination justify-content-end mb-0">
+              <li class="page-item disabled">
+                <a class="page-link" href="javascript:void(0)" tabindex="-1">
+                  <i class="fas fa-angle-left"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="javascript:void(0)">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)"
+                  >2 <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0)">
+                  <i class="fas fa-angle-right"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

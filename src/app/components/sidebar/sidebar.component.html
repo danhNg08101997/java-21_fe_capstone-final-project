@@ -139,28 +139,27 @@
       <!-- Navigation -->
       <ul class="navbar-nav">
         <li
-          *ngFor="let menuItem of menuItems"
-          class="{{ menuItem.class }} nav-item"
+          *ngFor="let menuCategory of menuCategories"
+          class="{{ menuCategory.class }} nav-item"
           ngbDropdown
         >
           <a
             routerLinkActive="active"
-            [routerLink]="[menuItem.path]"
-            class="nav-link"
+            class="nav-link cursor"
             ngbDropdownToggle
           >
-            <i class="ni {{ menuItem.icon }}"></i>
-            {{ menuItem.categoryName }}
+            <i class="{{ menuCategory.icon }}"></i>
+            {{ menuCategory.categoryName }}
           </a>
           <ul class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
             <li *ngFor="let menuProduct of menuProducts">
               <a
-                *ngIf="menuItem.id == menuProduct.category.id"
+                *ngIf="menuCategory.id == menuProduct.category.id"
                 routerLinkActive="active"
-                [routerLink]="['{{menuProduct.path}}']"
+                [routerLink]="[menuProduct.path]"
                 class="dropdown-item"
               >
-                <i class="{{menuProduct.icon}}"></i>
+                <i class="{{ menuProduct.icon }}"></i>
                 <span>{{ menuProduct.productName }}</span>
               </a>
             </li>
